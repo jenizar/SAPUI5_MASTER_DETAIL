@@ -1,0 +1,48 @@
+<core:View
+	controllerName="sap.ui.demo.myFiori.view.LineItem"
+	xmlns="sap.m"
+	xmlns:form="sap.ui.layout.form"	
+	xmlns:core="sap.ui.core" >
+	<Page
+		id="page"
+		title=" {i18n>LineItemTitle}"
+		showNavButton="true"
+		navButtonPress="handleNavBack" >
+		<footer>
+			<Bar>
+        <contentRight>
+          <Button id="edit" text="Edit" press="handleEditPress" />
+        </contentRight>			
+			</Bar>
+		</footer>
+		<content>
+					<form:SimpleForm
+						id="SupplierForm1"
+						minWidth="1024" >
+						<core:Title text="Sales Order" />
+						<Label text="Sales Document"/>
+						<Text text="{Vbeln}" />
+						<Label text="Doc.Item"/>
+						<Text text="{Posnr}" />							
+						<Label text="Date"/>
+						<Text text="{Erdat}" />		
+						<Label text="Currency"/>
+						<Text text="{Waerk}" />						
+						<Label text="Total Amount"/>
+						<Text text="{Netwr}" />												
+						<Label text="Material No."/>
+						<Text text="{Matnr}" />			
+						<Label text="Material Group"/>
+						<Text text="{Matkl}" />														
+						<Label text="Description"/>
+						<Text text="{Arktx}" />			
+						<Label text="Division"/>
+						<Text text="{Spart}" />			
+						<Label text="Business Area"/>
+						<Text text="{Gsber}" />
+						<Label text="Status"/>
+						<Text text="{DocStatus}" />																																	
+					</form:SimpleForm>											
+		</content>		
+	</Page>
+</core:View>

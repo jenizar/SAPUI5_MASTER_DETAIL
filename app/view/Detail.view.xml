@@ -1,0 +1,102 @@
+<core:View
+	controllerName="sap.ui.demo.myFiori.view.Detail"
+	xmlns="sap.m"
+	xmlns:form="sap.ui.layout.form"
+	xmlns:core="sap.ui.core" >
+	<Page
+		title="{i18n>DetailTitle}"
+		class="sapUiFioriObjectPage"
+		showNavButton="{device>/isPhone}"
+		navButtonPress="handleNavButtonPress" >
+					<form:SimpleForm
+						id="SupplierForm"
+						minWidth="1024" >
+						<core:Title text="Sales Distribution" />
+						<Label text="Sales Document"/>
+						<Text text="{Vbeln}" />
+						<Label text="Document Date"/>
+						<Text text="{Audat}" />
+						<Label text="Total Amount"/>
+						<Text text="{Netwr}" />
+						<Label text="Currency"/>
+						<Text text="{Waerk}" />	
+						<Label text="Sales Organization"/>
+						<Text text="{Vkorg}" />	
+						<Label text="Distribution Channel"/>
+						<Text text="{Vtweg}" />	
+						<Label text="Division"/>
+						<Text text="{Spart}" />	
+						<Label text="Sales Group"/>
+						<Text text="{Vkgrp}" />							
+						<Label text="Status Approval"/>
+						<Text text="{path: 'ApprovalStatus',
+						formatter: 'sap.ui.demo.myFiori.util.Formatter.statusText'}" />												
+					</form:SimpleForm>								
+		<Table
+			headerText="{i18n>LineItemTableHeader}"
+			items="{LineItems}" >
+			<columns>
+				<Column
+					minScreenWidth="Tablet"
+					demandPopin="true"
+					hAlign="Center" >
+					<header><Label text="Sales Document" /></header>
+				</Column>
+				<Column
+					minScreenWidth="Tablet"
+					demandPopin="true"
+					hAlign="Center" >
+					<header><Label text="Doc.Item" /></header>
+				</Column>
+				<Column	
+					minScreenWidth="Tablet"
+					demandPopin="true"
+					hAlign="Center" >
+					<header><Label text="Date" /></header>
+				</Column>
+				<Column					
+					minScreenWidth="Tablet"
+					demandPopin="true"
+					hAlign="Center" >
+					<header><Label text="Material No." /></header>
+				</Column>		
+				<Column								
+					minScreenWidth="Tablet"
+					demandPopin="true"
+					hAlign="Center" >
+					<header><Label text="Description" /></header>
+				</Column>				
+			</columns>
+			<ColumnListItem
+				type="Navigation"
+				press="handleLineItemPress" >
+				<cells>
+					<ObjectIdentifier
+						title="{Vbeln}" />
+					<ObjectIdentifier
+						title="{Posnr}" />	
+					<ObjectIdentifier
+						title="{Erdat}" />						
+					<ObjectNumber
+						number="{Matnr}" />
+					<ObjectIdentifier
+						title="{Arktx}" />						
+				</cells>
+			</ColumnListItem>
+		</Table>
+		<footer>
+			<Bar>
+				<contentRight>
+					<Button
+						text="{i18n>ApproveButtonText}"
+						type="Accept"
+						icon="sap-icon://accept"
+						press="handleApprove" />
+				</contentRight>
+				<contentLeft>
+                   <Label text="by: John Eswin Nizar © 2015" class="sapUiSmallMarginBottom" />
+				</contentLeft>				
+			</Bar>
+		</footer>
+	</Page>
+</core:View>
